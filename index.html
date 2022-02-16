@@ -1,2 +1,132 @@
-<hi>happy birthday~</h1>
-<p>hi</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打地鼠</title>
+    <style>
+        table {
+            background-image: url('images/beijing.jpg');
+            width: 800px;
+            position: relative;
+            left: 50%;
+            top: 10px;
+            transform: translate(-50%, 0);
+        }
+        
+        table>caption {
+            font-family: '微软雅黑';
+            font-size: 20px;
+        }
+        
+        table>td {
+            width: 100px;
+            height: 50px;
+        }
+        
+        img {
+            margin-top: 30px;
+        }
+        
+        body {
+            cursor: url('images/e.ico'), -moz-cell;
+        }
+        
+        .sorce {
+            width: 325px;
+            height: 100px;
+            background-color: rgb(166, 212, 253);
+            /* float: left; */
+            text-align: center;
+            line-height: 40px;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+        
+        .d1 {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">
+        <!-- 定义一个div标签用来存放分数 -->
+        <div class="sorce">
+            <p id="level">第1关</p>
+            <p id="zong">总分：0</p>
+        </div>
+        <!-- 定义一个表格，存放坑位 -->
+        <table id="box">
+            <caption>打地鼠</caption>
+            <tr id="t">
+                <td><img src="images/keng.jpg" alt="keng"></td>
+                <td><img src="images/keng.jpg" alt="keng"></td>
+                <td><img src="images/keng.jpg" alt="keng"></td>
+            </tr>
+            <tr>
+                <td><img src="images/keng.jpg" alt="keng"></td>
+                <td><img src="images/keng.jpg" alt="keng"></td>
+                <td><img src="images/keng.jpg" alt="keng"></td>
+            </tr>
+            <tr>
+                <td><img src="images/keng.jpg" alt="keng"></td>
+                <td><img src="images/keng.jpg" alt="keng"></td>
+                <td><img src="images/keng.jpg" alt="keng"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        //获取数据
+        var dishus = document.getElementsByTagName('img');
+        var nums = 0;
+        var sum = 0;
+        var box = document.getElementById('box');
+        var t = document.getElementById('t');
+        var res = document.getElementsByTagName('tr');
+        // alert(dishus.length);
+        if (sum == 0) {
+            setTimeout(showin, 1000);
+
+        }
+        //地鼠显示方法  
+        function showin() {
+            nums = Math.floor(Math.random() * dishus.length);
+            dishus[nums].src = 'images/dishu.jpg';
+            dishus[nums].style.marginTop = 'auto';
+            dishus[nums].setAttribute("onclick", "beat()")
+            setTimeout(hideof, Math.random() * 500 + 1000);
+
+        }
+
+
+
+        //地鼠隐藏方法  
+
+        function hideof() {
+            dishus[nums].src = 'images/keng.jpg';
+            dishus[nums].removeAttribute("onclick");
+            dishus[nums].style.marginTop = '30px';
+            setTimeout(showin, Math.random() * 500 + 1000);
+
+        }
+
+
+
+        //击打地鼠方法  
+
+        function beat() {
+            dishus[nums].src = 'images/shang.gif';
+            sum += 10;
+            dishus[nums].style.marginTop = '0px';
+
+            document.getElementById('zong').innerHTML = '总分：' + sum;
+
+        }
+    </script>
+</body>
+
+</html>

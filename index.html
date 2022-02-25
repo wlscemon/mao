@@ -4,81 +4,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <title>打地鼠</title>
     <style>
+        .img-h {
+            max-width:100%;
+        }
+
         table {
-            background-image: url('images/beijing.jpg');
-            width: 800px;
+            border-radius: 10px;
+            background-color:#ecd6c7;
+            width:80%;
             position: relative;
             left: 50%;
-            top: 10px;
+            top: 2%;
             transform: translate(-50%, 0);
+            margin-bottom: 6%;
+
+            border-radius: 54px;
+            background: #e0e0e0;
+            box-shadow:  12px 12px 24px #bebebe,
+            -12px -12px 24px #ffffff;
         }
         
         table>caption {
-            font-family: '微软雅黑';
+            font-family:  "Lucida Console", "Courier New", monospace;
             font-size: 20px;
         }
         
         table>td {
-            width: 100px;
-            height: 50px;
+            width: 5%;
+            height: 5%;
         }
         
         img {
-            margin-top: 30px;
+            margin-top: 5%;
+            width:200px;
         }
         
         body {
             cursor: url('images/e.ico'), -moz-cell;
+            background-color: #fafbfd;
+            /*background: #314755;  !* fallback for old browsers *!*/
+            /*background: -webkit-linear-gradient(to right, #26a0da, #314755);  !* Chrome 10-25, Safari 5.1-6 *!*/
+            /*background: linear-gradient(to right, #26a0da, #314755); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
+
         }
         
         .sorce {
-            width: 325px;
-            height: 100px;
-            background-color: rgb(166, 212, 253);
+
+            border-radius: 5px;
+            /*border: 3px solid #dd7777;*/
+            width: 80%;
+            height: 5%;
+            /*background-color: rgb(166, 212, 253);*/
             /* float: left; */
             text-align: center;
-            line-height: 40px;
+            /*line-height: 40px;*/
             position: relative;
             left: 50%;
             transform: translate(-50%, 0);
+            margin-top: 2%;
+            margin-bottom: 2%;
+            font-family: Cursive;
+            font-size:xx-large;
+            color: #314755;
+            /*padding: 1px;*/
+            position: center;
+
+            border-radius: 54px;
+            background: #e0e0e0;
+            box-shadow:  12px 12px 24px #bebebe,
+            -12px -12px 24px #ffffff;
         }
         
         .d1 {
             position: relative;
         }
+
+
     </style>
 </head>
 
 <body>
+
     <div class="d1">
         <!-- 定义一个div标签用来存放分数 -->
         <div class="sorce">
-            <p id="level">第1关</p>
-            <p id="zong">总分：0</p>
+<!--            <p id="level">第1关</p>-->
+            <p id="zong">0</p>
         </div>
+
+<!--        <div id='al' class="alert alert-danger" role="alert">...</div>-->
+
         <!-- 定义一个表格，存放坑位 -->
         <table id="box">
-            <caption>打地鼠</caption>
+<!--            <caption>打地鼠</caption>-->
             <tr id="t">
-                <td><img src="images/keng.jpg" alt="keng"></td>
-                <td><img src="images/keng.jpg" alt="keng"></td>
-                <td><img src="images/keng.jpg" alt="keng"></td>
+                <td><img class="img-h" src="images/hole.png" alt="keng"></td>
+                <td><img class="img-h" src="images/hole.png" alt="keng"></td>
+                <td><img class="img-h" src="images/hole.png" alt="keng"></td>
             </tr>
             <tr>
-                <td><img src="images/keng.jpg" alt="keng"></td>
-                <td><img src="images/keng.jpg" alt="keng"></td>
-                <td><img src="images/keng.jpg" alt="keng"></td>
+                <td><img class="img-h" src="images/hole.png" alt="keng"></td>
+                <td><img class="img-h" src="images/hole.png" alt="keng"></td>
+                <td><img class="img-h" src="images/hole.png" alt="keng"></td>
             </tr>
             <tr>
-                <td><img src="images/keng.jpg" alt="keng"></td>
-                <td><img src="images/keng.jpg" alt="keng"></td>
-                <td><img src="images/keng.jpg" alt="keng"></td>
+                <td><img class="img-h" src="images/hole.png" alt="keng"></td>
+                <td><img class="img-h" src="images/hole.png" alt="keng"></td>
+                <td><img class="img-h" src="images/hole.png" alt="keng"></td>
             </tr>
         </table>
     </div>
-
     <script>
         //获取数据
         var dishus = document.getElementsByTagName('img');
@@ -87,15 +132,16 @@
         var box = document.getElementById('box');
         var t = document.getElementById('t');
         var res = document.getElementsByTagName('tr');
+        var check = true
         // alert(dishus.length);
-        if (sum == 0) {
+        if (sum == 0 && check==true) {
             setTimeout(showin, 1000);
 
         }
         //地鼠显示方法  
         function showin() {
             nums = Math.floor(Math.random() * dishus.length);
-            dishus[nums].src = 'images/dishu.jpg';
+            dishus[nums].src = 'images/sci.png';
             dishus[nums].style.marginTop = 'auto';
             dishus[nums].setAttribute("onclick", "beat()")
             setTimeout(hideof, Math.random() * 500 + 1000);
@@ -107,7 +153,7 @@
         //地鼠隐藏方法  
 
         function hideof() {
-            dishus[nums].src = 'images/keng.jpg';
+            dishus[nums].src = 'images/hole.png';
             dishus[nums].removeAttribute("onclick");
             dishus[nums].style.marginTop = '30px';
             setTimeout(showin, Math.random() * 500 + 1000);
@@ -119,12 +165,20 @@
         //击打地鼠方法  
 
         function beat() {
-            dishus[nums].src = 'images/shang.gif';
-            sum += 10;
+            dishus[nums].src = 'images/get.png';
+            sum += 1;
             dishus[nums].style.marginTop = '0px';
 
-            document.getElementById('zong').innerHTML = '总分：' + sum;
+            document.getElementById('zong').innerHTML = sum;
+            if (sum==22){
+                myFunction();
+            }
 
+        }
+        
+        function myFunction() {
+            alert("lzc生日快乐~");
+            check = false;
         }
     </script>
 </body>
